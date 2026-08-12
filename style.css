@@ -397,6 +397,10 @@ body {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 24px;
+  justify-content: center;
+  align-items: stretch;
+  max-width: 1140px;
+  margin: 0 auto;
 }
 
 .service-card {
@@ -555,12 +559,14 @@ body {
 /* ================================================
    PROJECTS SECTION
    ================================================ */
-.projects-section { min-height: auto; padding-top: 80px; padding-bottom: 80px; }
-
 .projects-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
   gap: 24px;
+  justify-content: center;
+  align-items: stretch;
+  max-width: 1140px;
+  margin: 0 auto;
 }
 
 .project-card {
@@ -886,6 +892,7 @@ body {
   flex-shrink: 0;
 }
 .contact-icon svg { width: 20px; height: 20px; }
+.whatsapp-icon { background: #DCFCE7; color: #16A34A; border: 1px solid #BBF7D0; }
 .linkedin-icon { background: #EFF6FF; color: #0A66C2; border: 1px solid #BFDBFE; }
 .github-icon { background: #F8FAFC; color: var(--text-primary); border: 1px solid var(--border); }
 .email-icon { background: #FEF2F2; color: #EA4335; border: 1px solid #FECACA; }
