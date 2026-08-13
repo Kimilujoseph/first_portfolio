@@ -78,9 +78,11 @@ Key Engineering Highlights:
     liveUrl: 'https://careers.augustusstores.co.ke',
     githubUrl: '#',
     demoCredentials: {
-      manager: 'manager@gmail.com',
+
       jobseeker: 'jobseeker@gmail.com',
-      password: '12345678'
+      password: 'Jobs@2025',
+      jobseeker2: 'seeker2@gmail.com',
+      password: 'Seeker@2025'
     },
     features: [
       'Identity & Access Management: Stateless SimpleJWT authentication with role-based routing (Job Seeker, Recruiter, Admin).',
