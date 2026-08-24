@@ -79,10 +79,8 @@ Key Engineering Highlights:
     githubUrl: '#',
     demoCredentials: {
 
-      jobseeker: 'jobseeker@gmail.com',
-      password: 'Jobs@2025',
-      jobseeker2: 'seeker2@gmail.com',
-      password: 'Seeker@2025'
+      jobseeker: 'Seeker@gmail.com',
+      password: 'Seeker@2025',
     },
     features: [
       'Identity & Access Management: Stateless SimpleJWT authentication with role-based routing (Job Seeker, Recruiter, Admin).',
