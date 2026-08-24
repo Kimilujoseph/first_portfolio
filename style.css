@@ -640,6 +640,12 @@ body {
   color: var(--text-primary);
   border: 1px solid var(--border);
   font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+}
+.project-tech-mini span i {
+  font-size: 0.85em;
 }
 
 .view-details-btn {
@@ -781,6 +787,12 @@ body {
   color: var(--text-primary);
   border: 1px solid var(--border);
   font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+.detail-tags span i {
+  font-size: 0.95em;
 }
 
 .detail-main {

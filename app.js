@@ -9,30 +9,30 @@
    DATA
 ----------------------------------------------- */
 const SKILLS = [
-  { name: 'JavaScript', icon: '🟨' },
-  { name: 'TypeScript', icon: '🔷' },
-  { name: 'Python', icon: '🐍' },
-  { name: 'React.js', icon: '⚛️' },
-  { name: 'Node.js', icon: '🟢' },
-  { name: 'Express.js', icon: '🚂' },
-  { name: 'Django', icon: '🎸' },
-  { name: 'MySQL', icon: '🗄️' },
-  { name: 'PostgreSQL', icon: '🐘' },
-  { name: 'MongoDB', icon: '🍃' },
-  { name: 'Docker', icon: '🐳' },
-  { name: 'Nginx', icon: '🔵' },
-  { name: 'Git', icon: '🔀' },
-  { name: 'Linux', icon: '🐧' },
-  { name: 'AWS', icon: '☁️' },
-  { name: 'Prometheus', icon: '📊' },
-  { name: 'Jest', icon: '🃏' },
-  { name: 'pytest', icon: '🧪' },
-  { name: 'HTML', icon: '🌐' },
-  { name: 'CSS', icon: '🎨' },
-  { name: 'Redis', icon: '🔴' },
-  { name: 'Puppeteer', icon: '🤖' },
-  { name: 'REST APIs', icon: '🔌' },
-  { name: 'Bootstrap', icon: '🅱️' },
+  { name: 'JavaScript', icon: 'devicon-javascript-plain colored' },
+  { name: 'TypeScript', icon: 'devicon-typescript-plain colored' },
+  { name: 'Python', icon: 'devicon-python-plain colored' },
+  { name: 'React.js', icon: 'devicon-react-original colored' },
+  { name: 'Node.js', icon: 'devicon-nodejs-plain colored' },
+  { name: 'Express.js', icon: 'devicon-express-original' },
+  { name: 'Django', icon: 'devicon-django-plain colored' },
+  { name: 'MySQL', icon: 'devicon-mysql-plain colored' },
+  { name: 'PostgreSQL', icon: 'devicon-postgresql-plain colored' },
+  { name: 'MongoDB', icon: 'devicon-mongodb-plain colored' },
+  { name: 'Docker', icon: 'devicon-docker-plain colored' },
+  { name: 'Nginx', icon: 'devicon-nginx-original colored' },
+  { name: 'Git', icon: 'devicon-git-plain colored' },
+  { name: 'Linux', icon: 'devicon-linux-plain' },
+  { name: 'AWS', icon: 'devicon-amazonwebservices-plain colored' },
+  { name: 'Prometheus', icon: 'devicon-prometheus-original colored' },
+  { name: 'Jest', icon: 'devicon-jest-plain colored' },
+  { name: 'pytest', icon: 'devicon-pytest-plain colored' },
+  { name: 'HTML', icon: 'devicon-html5-plain colored' },
+  { name: 'CSS', icon: 'devicon-css3-plain colored' },
+  { name: 'Redis', icon: 'devicon-redis-plain colored' },
+  { name: 'Puppeteer', icon: 'devicon-puppeteer-plain colored' },
+  { name: 'REST APIs', icon: 'devicon-fastapi-plain colored' },
+  { name: 'Bootstrap', icon: 'devicon-bootstrap-plain colored' },
 ];
 
 const PROJECTS = [
@@ -291,6 +291,41 @@ function initNavigation() {
   }
 }
 
+const TECH_ICON_MAP = {
+  'React': 'devicon-react-original colored',
+  'TypeScript': 'devicon-typescript-plain colored',
+  'JavaScript': 'devicon-javascript-plain colored',
+  'Node.js': 'devicon-nodejs-plain colored',
+  'Express.js': 'devicon-express-original',
+  'MySQL': 'devicon-mysql-plain colored',
+  'PostgreSQL': 'devicon-postgresql-plain colored',
+  'Prisma ORM': 'devicon-prisma-original colored',
+  'Redis': 'devicon-redis-plain colored',
+  'Nginx': 'devicon-nginx-original colored',
+  'Tailwind CSS': 'devicon-tailwindcss-plain colored',
+  'Python': 'devicon-python-plain colored',
+  'Django': 'devicon-django-plain colored',
+  'Django REST Framework': 'devicon-django-plain colored',
+  'Celery': 'devicon-python-plain colored',
+  'Docker': 'devicon-docker-plain colored',
+  'AWS': 'devicon-amazonwebservices-plain-wordmark colored',
+  'HTML': 'devicon-html5-plain colored',
+  'CSS': 'devicon-css3-plain colored',
+  'Bootstrap': 'devicon-bootstrap-plain colored',
+  'Git': 'devicon-git-plain colored',
+  'Linux': 'devicon-linux-plain colored',
+  'Jest': 'devicon-jest-plain colored',
+  'pytest': 'devicon-pytest-plain colored'
+};
+
+function getTechBadge(techName) {
+  const iconClass = TECH_ICON_MAP[techName];
+  if (iconClass) {
+    return `<span><i class="${iconClass}"></i> ${techName}</span>`;
+  }
+  return `<span>${techName}</span>`;
+}
+
 /* -----------------------------------------------
    SKILLS GRID
 ----------------------------------------------- */
@@ -303,7 +338,7 @@ function initSkills() {
     const cell = document.createElement('div');
     cell.className = 'skill-cell scroll-reveal';
     cell.innerHTML = `
-      <span class="skill-icon">${skill.icon}</span>
+      <span class="skill-icon"><i class="${skill.icon}"></i></span>
       <span class="skill-name">${skill.name}</span>
     `;
     grid.appendChild(cell);
@@ -323,7 +358,7 @@ function initProjects() {
     card.className = 'project-card scroll-reveal';
     card.setAttribute('data-id', project.id);
 
-    const techTags = project.tech.slice(0, 3).map(t => `<span>${t}</span>`).join('');
+    const techTags = project.tech.slice(0, 4).map(t => getTechBadge(t)).join('');
 
     card.innerHTML = `
       <div class="project-card-header">
@@ -404,7 +439,7 @@ function openProjectDetail(projectId) {
 
   // Tech tags
   const tagsEl = document.getElementById('detail-tags');
-  tagsEl.innerHTML = project.tech.map(t => `<span>${t}</span>`).join('');
+  tagsEl.innerHTML = project.tech.map(t => getTechBadge(t)).join('');
 
   // Features
   const featuresEl = document.getElementById('detail-features');
